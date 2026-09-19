@@ -153,8 +153,8 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({
                       onClick={() => toggleSlot(slotIndex)}
                       className={`w-full flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg text-xs font-semibold transition-colors min-h-[38px] ${
                         openSlot === slotIndex
-                          ? 'bg-sky-500 text-white shadow-xs'
-                          : 'bg-white dark:bg-slate-900 text-sky-600 dark:text-sky-400 border border-sky-300/70 dark:border-sky-800/60 hover:border-sky-500 dark:hover:border-sky-600 shadow-2xs'
+                          ? 'bg-emerald-500 text-white shadow-xs'
+                          : 'bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 border border-emerald-300/70 dark:border-emerald-800/60 hover:border-emerald-500 dark:hover:border-emerald-600 shadow-2xs'
                       }`}
                     >
                       <Plus className="w-3.5 h-3.5 shrink-0" />
