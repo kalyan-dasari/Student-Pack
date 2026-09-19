@@ -58,7 +58,7 @@ export const ClaimButton: React.FC<ClaimButtonProps> = ({
         href={targetUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`inline-flex items-center justify-center gap-2 rounded-xl bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-white shadow-xs transition-all focus:outline-none focus:ring-2 focus:ring-sky-400/50 min-h-[44px] ${sizeClasses[size]} w-full sm:w-auto text-center`}
+        className={`inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-white shadow-xs transition-all focus:outline-none focus:ring-2 focus:ring-emerald-400/50 min-h-[44px] ${sizeClasses[size]} w-full sm:w-auto text-center`}
       >
         <span>Claim on Official Portal</span>
         <ExternalLink className="w-4 h-4 shrink-0" />
