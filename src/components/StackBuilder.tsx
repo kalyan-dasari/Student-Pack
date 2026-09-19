@@ -113,7 +113,7 @@ export const StackBuilder: React.FC<StackBuilderProps> = ({ onSelectOffer }) => 
                         href={offer.githubOfferUrl || offer.officialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 sm:flex-initial px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-sky-500 hover:bg-sky-400 active:bg-sky-600 inline-flex items-center justify-center gap-1 transition-colors min-h-[38px]"
+                        className="flex-1 sm:flex-initial px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 inline-flex items-center justify-center gap-1 transition-colors min-h-[38px]"
                       >
                         Claim <ExternalLink className="w-3 h-3" />
                       </a>

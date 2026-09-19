@@ -69,7 +69,7 @@ export const FAQView: React.FC = () => {
               onClick={() => setSelectedCategory(cat)}
               className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-colors min-h-[36px] ${
                 selectedCategory === cat
-                  ? 'bg-sky-500 text-white shadow-xs'
+                  ? 'bg-emerald-500 text-white shadow-xs'
                   : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-sky-300 dark:hover:border-sky-700/60'
               }`}
             >

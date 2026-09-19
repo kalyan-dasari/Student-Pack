@@ -184,7 +184,7 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({
                               <button
                                 type="button"
                                 onClick={() => handleAddOffer(opt.id)}
-                                className="w-full text-left px-3 py-2 hover:bg-sky-50 dark:hover:bg-sky-950/40 transition-colors flex items-center justify-between gap-2 min-h-[36px]"
+                                className="w-full text-left px-3 py-2 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 transition-colors flex items-center justify-between gap-2 min-h-[36px]"
                               >
                                 <span className="text-xs font-semibold text-slate-900 dark:text-slate-100 truncate">
                                   {opt.name}
