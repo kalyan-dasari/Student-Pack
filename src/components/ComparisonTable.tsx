@@ -131,25 +131,79 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({
           return (
             <div
               key={`empty-${slotIndex}`}
-              className="p-3 rounded-xl border border-dashed border-slate-300 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 flex items-center justify-center"
+              className="p-3 rounded-xl border border-dashed border-slate-300 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30"
             >
-              <div className="relative">
-                <select
-                  onChange={(e) => {
-                    if (e.target.value) handleAddOffer(e.target.value);
-                  }}
-                  defaultValue=""
-                  className="text-xs font-semibold text-sky-600 dark:text-sky-400 bg-transparent cursor-pointer focus:outline-none"
+              <div
+                className="relative"
+                ref={openSlot === slotIndex ? dropdownRef : undefined}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleSlot(slotIndex)}
+                  className={`w-full flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg text-xs font-semibold transition-colors min-h-[38px] ${
+                    openSlot === slotIndex
+                      ? 'bg-sky-500 text-white shadow-xs'
+                      : 'bg-white dark:bg-slate-900 text-sky-600 dark:text-sky-400 border border-sky-300/70 dark:border-sky-800/60 hover:border-sky-500 dark:hover:border-sky-600 shadow-2xs'
+                  }`}
                 >
-                  <option value="" disabled>
-                    + Add tool to compare
-                  </option>
-                  {OFFERS_DATA.filter((o) => !selectedIds.includes(o.id)).map((opt) => (
-                    <option key={opt.id} value={opt.id} className="text-slate-900 dark:text-slate-100">
-                      {opt.name} ({opt.category})
-                    </option>
-                  ))}
-                </select>
+                  <Plus className="w-3.5 h-3.5 shrink-0" />
+                  <span>Add tool to compare</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 shrink-0 transition-transform ${
+                      openSlot === slotIndex ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {openSlot === slotIndex && (
+                  <div className="absolute z-20 mt-2 left-0 right-0 min-w-[230px] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-xl overflow-hidden">
+                    <div className="flex items-center gap-2 px-3 py-2.5 border-b border-slate-100 dark:border-slate-800">
+                      <Search className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <input
+                        type="text"
+                        placeholder="Search tools..."
+                        value={dropdownSearch}
+                        onChange={(e) => setDropdownSearch(e.target.value)}
+                        className="w-full text-xs bg-transparent outline-none text-slate-900 dark:text-slate-100 placeholder-slate-400"
+                      />
+                    </div>
+                    <ul className="max-h-56 overflow-y-auto custom-scrollbar py-1">
+                      {OFFERS_DATA.filter(
+                        (o) =>
+                          !selectedIds.includes(o.id) &&
+                          (dropdownSearch.trim() === '' ||
+                            o.name.toLowerCase().includes(dropdownSearch.toLowerCase()) ||
+                            o.category.toLowerCase().includes(dropdownSearch.toLowerCase()))
+                      ).map((opt) => (
+                        <li key={opt.id}>
+                          <button
+                            type="button"
+                            onClick={() => handleAddOffer(opt.id)}
+                            className="w-full text-left px-3 py-2 hover:bg-sky-50 dark:hover:bg-sky-950/40 transition-colors flex items-center justify-between gap-2 min-h-[36px]"
+                          >
+                            <span className="text-xs font-semibold text-slate-900 dark:text-slate-100 truncate">
+                              {opt.name}
+                            </span>
+                            <span className="text-[10px] text-slate-500 dark:text-slate-400 shrink-0">
+                              {opt.category}
+                            </span>
+                          </button>
+                        </li>
+                      ))}
+                      {OFFERS_DATA.filter(
+                        (o) =>
+                          !selectedIds.includes(o.id) &&
+                          (dropdownSearch.trim() === '' ||
+                            o.name.toLowerCase().includes(dropdownSearch.toLowerCase()) ||
+                            o.category.toLowerCase().includes(dropdownSearch.toLowerCase()))
+                      ).length === 0 && (
+                        <li className="px-3 py-3 text-center text-xs text-slate-500 dark:text-slate-400">
+                          No tools match your search.
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           );
