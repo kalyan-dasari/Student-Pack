@@ -33,7 +33,7 @@ export const OfferGrid: React.FC<OfferGridProps> = ({
           <button
             type="button"
             onClick={onResetFilters}
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold bg-sky-500 text-white hover:bg-sky-400 active:bg-sky-600 shadow-xs transition-colors min-h-[40px]"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold bg-emerald-500 text-white hover:bg-emerald-400 active:bg-emerald-600 shadow-xs transition-colors min-h-[40px]"
           >
             <Sparkles className="w-3.5 h-3.5" />
             Reset all filters
