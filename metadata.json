@@ -1,0 +1,6 @@
+{
+  "name": "Student Pack",
+  "description": "An unofficial, community-maintained developer guide to the GitHub Student Developer Pack with detailed offer explanations, stack recipes, claim steps, and checklists.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
