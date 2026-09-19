@@ -23,16 +23,12 @@ interface OfferDetailProps {
   offer: StudentPackOffer;
   onBack: () => void;
   onSelectRelatedOffer: (offerId: string) => void;
-  isClaimed: boolean;
-  onToggleClaimedStatus: (offerId: string) => void;
 }
 
 export const OfferDetail: React.FC<OfferDetailProps> = ({
   offer,
   onBack,
   onSelectRelatedOffer,
-  isClaimed,
-  onToggleClaimedStatus,
 }) => {
   // Find related offers data
   const relatedOffers = OFFERS_DATA.filter((o) =>

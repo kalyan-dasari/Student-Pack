@@ -239,20 +239,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         <button
           type="button"
-          onClick={() => handleNavClick('checklist')}
+          onClick={() => handleNavClick('expiring')}
           className={`relative flex flex-col items-center justify-center py-1 px-2 rounded-xl text-[11px] font-medium min-w-[56px] min-h-[44px] transition-colors ${
-            currentView === 'checklist'
+            currentView === 'expiring'
               ? 'text-sky-600 dark:text-sky-400 font-semibold'
               : 'text-slate-500 dark:text-slate-400'
           }`}
         >
-          <CheckSquare className="w-5 h-5 mb-0.5" />
-          <span>Saved</span>
-          {checklistCount > 0 && (
-            <span className="absolute top-1 right-2.5 w-4 h-4 rounded-full bg-sky-500 text-white font-mono text-[9px] flex items-center justify-center font-bold">
-              {checklistCount}
-            </span>
-          )}
+          <Clock className="w-5 h-5 mb-0.5" />
+          <span>Time-Sensitive</span>
         </button>
       </nav>
     </>
