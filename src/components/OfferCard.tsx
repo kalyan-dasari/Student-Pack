@@ -33,11 +33,6 @@ export const OfferCard: React.FC<OfferCardProps> = ({
                 <Clock className="w-3 h-3" /> Limited Time
               </span>
             )}
-            {isClaimed && (
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/40">
-                <ShieldCheck className="w-3 h-3" /> Saved
-              </span>
-            )}
           </div>
         </div>
 
