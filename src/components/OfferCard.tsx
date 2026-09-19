@@ -109,7 +109,7 @@ export const OfferCard: React.FC<OfferCardProps> = ({
           href={offer.githubOfferUrl || offer.officialUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-1 px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-sky-500 hover:bg-sky-400 active:bg-sky-600 transition-colors shadow-xs min-h-[38px]"
+          className="inline-flex items-center justify-center gap-1 px-3.5 py-2 rounded-xl text-xs font-semibold text-white bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 transition-colors shadow-xs min-h-[38px]"
           title="Opens official GitHub Education or partner claim portal"
         >
           <span>Claim</span>
