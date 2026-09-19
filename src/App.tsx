@@ -11,15 +11,11 @@ import { OfferDetail } from './components/OfferDetail';
 import { StackBuilder } from './components/StackBuilder';
 import { ComparisonTable } from './components/ComparisonTable';
 import { LearningPath } from './components/LearningPath';
-import { ClaimChecklist } from './components/ClaimChecklist';
 import { OFFERS_DATA } from './data/offers';
-import { getStoredChecklist, saveChecklistStatus } from './utils/storage';
-import { UserChecklistState } from './types';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<AppView>('home');
   const [selectedOfferId, setSelectedOfferId] = useState<string | null>(null);
-  const [checklistState, setChecklistState] = useState<UserChecklistState>({});
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('studentpack_theme');
