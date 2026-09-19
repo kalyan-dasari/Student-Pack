@@ -336,7 +336,7 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({
                       href={offer.githubOfferUrl || offer.officialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-sky-500 text-white hover:bg-sky-400 active:bg-sky-600 transition-colors shadow-2xs min-h-[36px]"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500 text-white hover:bg-emerald-400 active:bg-emerald-600 transition-colors shadow-2xs min-h-[36px]"
                     >
                       <span>Claim {offer.name}</span>
                       <ExternalLink className="w-3 h-3" />
