@@ -30,8 +30,8 @@ export const StackBuilder: React.FC<StackBuilderProps> = ({ onSelectOffer }) => 
                 onClick={() => setSelectedStackId(stack.id)}
                 className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all min-h-[38px] ${
                   isSelected
-                    ? 'bg-sky-500 text-white shadow-xs'
-                    : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-sky-300 dark:hover:border-sky-700'
+                    ? 'bg-emerald-500 text-white shadow-xs'
+                    : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-700'
                 }`}
               >
                 {stack.name.replace('Build ', '')}
