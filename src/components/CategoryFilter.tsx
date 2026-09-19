@@ -45,7 +45,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
               <span
                 className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
                   isSelected
-                    ? 'bg-sky-600/70 text-sky-50 font-bold'
+                    ? 'bg-emerald-600/70 text-emerald-50 font-bold'
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
                 }`}
               >
