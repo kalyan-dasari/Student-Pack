@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { OFFERS_DATA } from '../data/offers';
 import { StudentPackOffer } from '../types';
-import { ExternalLink, X, Plus, Check, ShieldCheck, CreditCard, Sparkles } from 'lucide-react';
+import { ExternalLink, X, Plus, ChevronDown, Search, ShieldCheck, CreditCard } from 'lucide-react';
 
 interface ComparisonTableProps {
   initialOfferIds?: string[];
@@ -13,17 +13,36 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({
   onSelectOffer,
 }) => {
   const [selectedIds, setSelectedIds] = useState<string[]>(initialOfferIds);
-  const [selectorDropdownOpen, setSelectorDropdownOpen] = useState<boolean>(false);
+  const [openSlot, setOpenSlot] = useState<number | null>(null);
+  const [dropdownSearch, setDropdownSearch] = useState<string>('');
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpenSlot(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const comparedOffers = selectedIds
     .map((id) => OFFERS_DATA.find((o) => o.id === id))
     .filter((o): o is StudentPackOffer => Boolean(o));
 
+  const toggleSlot = (slotIndex: number) => {
+    setOpenSlot((current) => (current === slotIndex ? null : slotIndex));
+    setDropdownSearch('');
+  };
+
   const handleAddOffer = (offerId: string) => {
     if (selectedIds.length < 3 && !selectedIds.includes(offerId)) {
       setSelectedIds([...selectedIds, offerId]);
     }
-    setSelectorDropdownOpen(false);
+    setOpenSlot(null);
+    setDropdownSearch('');
   };
 
   const handleRemoveOffer = (offerId: string) => {
