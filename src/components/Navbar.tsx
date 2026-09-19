@@ -42,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navLinks: { view: AppView; label: string; icon: React.ReactNode; badge?: number }[] = [
+  const navLinks: { view: AppView; label: string; icon: React.ReactNode }[] = [
     { view: 'explorer', label: 'All Offers', icon: <Search className="w-4 h-4" /> },
     { view: 'best-first', label: 'Start Here', icon: <Sparkles className="w-4 h-4" /> },
     { view: 'stack-builder', label: 'Stack Builder', icon: <Layers className="w-4 h-4" /> },
@@ -109,11 +109,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                   >
                     {link.icon}
                     <span>{link.label}</span>
-                    {link.badge !== undefined && (
-                      <span className="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold bg-sky-500 text-white">
-                        {link.badge}
-                      </span>
-                    )}
                   </button>
                 );
               })}
