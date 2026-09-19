@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, AppView } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { HomeView } from './components/views/HomeView';
@@ -37,11 +37,6 @@ export default function App() {
     }
   }, [isDarkMode]);
 
-  // Load stored checklist on mount
-  useEffect(() => {
-    setChecklistState(getStoredChecklist());
-  }, []);
-
   // Hash-based router listener for deep linking & browser back/forward
   useEffect(() => {
     const handleHashChange = () => {
@@ -69,7 +64,6 @@ export default function App() {
           'stack-builder',
           'compare',
           'learning-paths',
-          'checklist',
           'expiring',
           'faq',
           'open-source',
@@ -104,22 +98,6 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleToggleClaimStatus = (offerId: string) => {
-    const current = checklistState[offerId]?.status;
-    const nextStatus = current === 'claimed' || current === 'using' ? 'not_claimed' : 'claimed';
-    const updated = saveChecklistStatus(offerId, nextStatus);
-    setChecklistState(updated);
-  };
-
-  const claimedOfferIds = useMemo(() => {
-    return Object.entries(checklistState)
-      .filter(([_, data]) => {
-        const item = data as UserChecklistState[string];
-        return item?.status === 'claimed' || item?.status === 'using';
-      })
-      .map(([id]) => id);
-  }, [checklistState]);
-
   const activeOffer = selectedOfferId
     ? OFFERS_DATA.find((o) => o.id === selectedOfferId)
     : null;
@@ -132,7 +110,6 @@ export default function App() {
         onNavigate={navigate}
         isDarkMode={isDarkMode}
         onToggleTheme={() => setIsDarkMode(!isDarkMode)}
-        checklistCount={claimedOfferIds.length}
       />
 
       {/* Main Content Area */}
@@ -141,14 +118,12 @@ export default function App() {
           <HomeView
             onNavigate={navigate}
             onSelectOffer={handleSelectOffer}
-            claimedOfferIds={claimedOfferIds}
           />
         )}
 
         {currentView === 'explorer' && (
           <ExplorerView
             onSelectOffer={handleSelectOffer}
-            claimedOfferIds={claimedOfferIds}
           />
         )}
 
@@ -157,15 +132,12 @@ export default function App() {
             offer={activeOffer}
             onBack={() => navigate('explorer')}
             onSelectRelatedOffer={handleSelectOffer}
-            isClaimed={claimedOfferIds.includes(activeOffer.id)}
-            onToggleClaimedStatus={handleToggleClaimStatus}
           />
         )}
 
         {currentView === 'best-first' && (
           <BestFirstView
             onSelectOffer={handleSelectOffer}
-            claimedOfferIds={claimedOfferIds}
           />
         )}
 
@@ -208,24 +180,6 @@ export default function App() {
               </p>
             </div>
             <LearningPath onSelectOffer={handleSelectOffer} />
-          </div>
-        )}
-
-        {currentView === 'checklist' && (
-          <div className="space-y-6 pb-12">
-            <div className="space-y-1">
-              <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                My Claim Checklist
-              </h1>
-              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                Track your active benefits, claim progress, and expiration windows in your browser.
-              </p>
-            </div>
-            <ClaimChecklist
-              checklistState={checklistState}
-              onUpdateState={setChecklistState}
-              onSelectOffer={handleSelectOffer}
-            />
           </div>
         )}
 
