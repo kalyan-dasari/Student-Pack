@@ -5,7 +5,6 @@ import {
   Sparkles,
   GitCompare,
   Compass,
-  CheckSquare,
   Clock,
   HelpCircle,
   Github,
@@ -24,7 +23,6 @@ export type AppView =
   | 'stack-builder'
   | 'compare'
   | 'learning-paths'
-  | 'checklist'
   | 'expiring'
   | 'faq'
   | 'open-source';
@@ -34,7 +32,6 @@ interface NavbarProps {
   onNavigate: (view: AppView, offerId?: string) => void;
   isDarkMode: boolean;
   onToggleTheme: () => void;
-  checklistCount: number;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -42,7 +39,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavigate,
   isDarkMode,
   onToggleTheme,
-  checklistCount,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -52,12 +48,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { view: 'stack-builder', label: 'Stack Builder', icon: <Layers className="w-4 h-4" /> },
     { view: 'compare', label: 'Compare', icon: <GitCompare className="w-4 h-4" /> },
     { view: 'learning-paths', label: 'Roadmaps', icon: <Compass className="w-4 h-4" /> },
-    {
-      view: 'checklist',
-      label: 'My Checklist',
-      icon: <CheckSquare className="w-4 h-4" />,
-      badge: checklistCount > 0 ? checklistCount : undefined,
-    },
     { view: 'expiring', label: 'Time-Sensitive', icon: <Clock className="w-4 h-4" /> },
     { view: 'faq', label: 'FAQ', icon: <HelpCircle className="w-4 h-4" /> },
     { view: 'open-source', label: 'Open Source', icon: <Github className="w-4 h-4" /> },
