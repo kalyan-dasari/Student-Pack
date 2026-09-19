@@ -37,8 +37,8 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
               onClick={() => onSelectCategory(cat.id)}
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap min-h-[36px] ${
                 isSelected
-                  ? 'bg-sky-500 text-white shadow-xs'
-                  : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 border border-slate-200/90 dark:border-slate-800 hover:border-sky-300 dark:hover:border-sky-700/60'
+                  ? 'bg-emerald-500 text-white shadow-xs'
+                  : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 border border-slate-200/90 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-700/60'
               }`}
             >
               <span>{cat.label}</span>
