@@ -101,10 +101,10 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({
             return (
               <div
                 key={offer.id}
-                className="p-3 rounded-xl border border-sky-200 dark:border-sky-900/60 bg-sky-50/50 dark:bg-sky-950/20 flex items-center justify-between gap-2"
+                className="p-3 rounded-xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/50 dark:bg-emerald-950/20 flex items-center justify-between gap-2"
               >
                 <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="w-8 h-8 rounded-lg bg-sky-500 text-white flex items-center justify-center font-bold text-xs shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shrink-0">
                     {offer.name.substring(0, 2).toUpperCase()}
                   </div>
                   <div className="min-w-0">
