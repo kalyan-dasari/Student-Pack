@@ -6,12 +6,10 @@ import { Sparkles, AlertTriangle, CheckCircle2, Clock, ShieldCheck } from 'lucid
 
 interface BestFirstViewProps {
   onSelectOffer: (offerId: string) => void;
-  claimedOfferIds: string[];
 }
 
 export const BestFirstView: React.FC<BestFirstViewProps> = ({
   onSelectOffer,
-  claimedOfferIds,
 }) => {
   const worthClaiming = OFFERS_DATA.filter((o) => o.worthClaimingFirst);
   const timeSensitive = OFFERS_DATA.filter((o) => o.isTimeSensitive);
@@ -105,7 +103,6 @@ export const BestFirstView: React.FC<BestFirstViewProps> = ({
               key={offer.id}
               offer={offer}
               onSelectOffer={onSelectOffer}
-              isClaimed={claimedOfferIds.includes(offer.id)}
             />
           ))}
         </div>

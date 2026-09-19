@@ -8,12 +8,10 @@ import { Disclaimer } from '../Disclaimer';
 
 interface ExplorerViewProps {
   onSelectOffer: (offerId: string) => void;
-  claimedOfferIds: string[];
 }
 
 export const ExplorerView: React.FC<ExplorerViewProps> = ({
   onSelectOffer,
-  claimedOfferIds,
 }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<OfferCategory | 'All'>('All');
@@ -139,7 +137,6 @@ export const ExplorerView: React.FC<ExplorerViewProps> = ({
       <OfferGrid
         offers={filteredOffers}
         onSelectOffer={onSelectOffer}
-        claimedOfferIds={claimedOfferIds}
         onResetFilters={handleResetFilters}
       />
     </div>

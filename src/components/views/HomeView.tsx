@@ -19,13 +19,11 @@ import { AppView } from '../Navbar';
 interface HomeViewProps {
   onNavigate: (view: AppView, offerId?: string) => void;
   onSelectOffer: (offerId: string) => void;
-  claimedOfferIds: string[];
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({
   onNavigate,
   onSelectOffer,
-  claimedOfferIds,
 }) => {
   const stats = calculateDatasetStats();
   const topOffers = OFFERS_DATA.filter((o) => o.worthClaimingFirst).slice(0, 6);
@@ -186,7 +184,6 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <OfferGrid
           offers={topOffers}
           onSelectOffer={onSelectOffer}
-          claimedOfferIds={claimedOfferIds}
         />
       </section>
 

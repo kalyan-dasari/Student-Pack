@@ -6,14 +6,12 @@ import { SearchX, Sparkles } from 'lucide-react';
 interface OfferGridProps {
   offers: StudentPackOffer[];
   onSelectOffer: (offerId: string) => void;
-  claimedOfferIds?: string[];
   onResetFilters?: () => void;
 }
 
 export const OfferGrid: React.FC<OfferGridProps> = ({
   offers,
   onSelectOffer,
-  claimedOfferIds = [],
   onResetFilters,
 }) => {
   if (offers.length === 0) {
@@ -55,7 +53,6 @@ export const OfferGrid: React.FC<OfferGridProps> = ({
           key={offer.id}
           offer={offer}
           onSelectOffer={onSelectOffer}
-          isClaimed={claimedOfferIds.includes(offer.id)}
         />
       ))}
     </div>
