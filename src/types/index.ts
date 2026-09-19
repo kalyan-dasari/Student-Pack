@@ -14,7 +14,7 @@ export type OfferCategory =
   | 'Personal Portfolio'
   | 'Virtual Events';
 
-export type ClaimStatus = 'not_claimed' | 'claimed' | 'using' | 'expired';
+
 
 export interface StudentPackOffer {
   id: string; // URL slug e.g. "mongodb"
@@ -83,10 +83,4 @@ export interface LearningPathItem {
   }[];
 }
 
-export interface UserChecklistState {
-  [offerId: string]: {
-    status: ClaimStatus;
-    claimedDate?: string;
-    notes?: string;
-  };
-}
+
