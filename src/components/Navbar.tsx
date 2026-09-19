@@ -172,11 +172,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <span className={isActive ? 'text-sky-500' : 'text-slate-400'}>{link.icon}</span>
                       <span>{link.label}</span>
                     </div>
-                    {link.badge !== undefined && (
-                      <span className="px-2 py-0.5 rounded-full text-xs font-mono font-bold bg-sky-500 text-white">
-                        {link.badge}
-                      </span>
-                    )}
                   </button>
                 );
               })}
