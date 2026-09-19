@@ -3,7 +3,7 @@
 > **IMPORTANT DISCLAIMER:**
 > This project is an independent open-source community guide and is **NOT affiliated with, endorsed by, sponsored by, or operated by GitHub Inc. or Microsoft Corporation**. GitHub and the GitHub logo are registered trademarks of GitHub, Inc.
 
-An open-source, community-driven web application and comprehensive knowledge base explaining every tool in the GitHub Student Developer Pack: what it actually does, what students can build with it, how long it is free, and verified redemption steps.
+An open-source, community-driven web application and comprehensive knowledge base explaining every tool in the GitHub Student Developer Pack: what it actually does, what students can build with it, how long it stays free, which ones need no credit card, and verified redemption steps. The focus is a clean, simple catalog of the free benefits you get as a student.
 
 ---
 
@@ -14,7 +14,6 @@ An open-source, community-driven web application and comprehensive knowledge bas
 - 🏗️ **Build Your Stack**: Interactive visual recipes connecting frontend, authentication, backend, database, and monitoring tools.
 - ⚖️ **Side-by-Side Comparison**: Compare up to 3 tools across key dimensions like card requirements, hosting model, and restrictions.
 - 🧭 **9 Career Learning Paths**: Curated roadmaps for Frontend, Backend, Full Stack, AI/ML, DevOps, Data Science, Mobile, Open Source, and Startups.
-- 📋 **Local Claim Checklist**: Track claimed, actively used, and expired offers directly in the browser via `localStorage` (no account required).
 - ⏳ **Clock & Sunset Awareness**: Transparent alerts on time-sensitive offers and sunset notices (such as DigitalOcean).
 - ❓ **Comprehensive Student FAQ**: Answers to common questions regarding credit cards, school emails, graduation rules, and commercial usage.
 
@@ -34,7 +33,6 @@ An open-source, community-driven web application and comprehensive knowledge bas
 - **Styling**: Tailwind CSS
 - **Iconography**: Lucide React
 - **Build Tool**: Vite
-- **Storage**: Browser LocalStorage for user checklist persistence
 
 ---
 
