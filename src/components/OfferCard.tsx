@@ -5,13 +5,11 @@ import { StudentPackOffer } from '../types';
 interface OfferCardProps {
   offer: StudentPackOffer;
   onSelectOffer: (offerId: string) => void;
-  isClaimed?: boolean;
 }
 
 export const OfferCard: React.FC<OfferCardProps> = ({
   offer,
   onSelectOffer,
-  isClaimed = false,
 }) => {
   return (
     <article

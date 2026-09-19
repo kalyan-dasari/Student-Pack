@@ -51,18 +51,6 @@ export const OfferDetail: React.FC<OfferDetailProps> = ({
 
         <div className="flex items-center gap-2">
           <LastVerified date={offer.lastVerified} status={offer.verificationStatus} />
-          <button
-            type="button"
-            onClick={() => onToggleClaimedStatus(offer.id)}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold border transition-colors ${
-              isClaimed
-                ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800'
-                : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:border-slate-300'
-            }`}
-          >
-            <CheckCircle2 className="w-3.5 h-3.5" />
-            <span>{isClaimed ? 'Marked Claimed' : 'Mark as Claimed'}</span>
-          </button>
         </div>
       </div>
 
