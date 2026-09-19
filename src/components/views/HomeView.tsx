@@ -55,7 +55,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             type="button"
             id="hero-explore-btn"
             onClick={() => onNavigate('explorer')}
-            className="px-6 py-3 rounded-xl text-sm font-semibold bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-white shadow-xs transition-all flex items-center justify-center gap-2 min-h-[44px]"
+            className="px-6 py-3 rounded-xl text-sm font-semibold bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-white shadow-xs transition-all flex items-center justify-center gap-2 min-h-[44px]"
           >
             <span>Explore All {stats.totalOffers} Offers</span>
             <ArrowRight className="w-4 h-4" />
