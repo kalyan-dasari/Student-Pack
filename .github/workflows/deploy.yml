@@ -29,6 +29,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Verify compiled Pages artifact
+        run: |
+          test -f dist/index.html
+          grep -q '/Student-Pack/assets/' dist/index.html
+          test ! -e dist/src
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
