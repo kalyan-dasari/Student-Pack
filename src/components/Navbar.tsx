@@ -72,13 +72,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               id="brand-logo-btn"
               className="flex items-center gap-2.5 cursor-pointer select-none shrink-0 group py-1"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-cyan-400 text-white flex items-center justify-center shadow-xs group-hover:from-sky-400 group-hover:to-cyan-300 transition-all">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 text-white flex items-center justify-center shadow-xs group-hover:from-emerald-400 group-hover:to-teal-300 transition-all">
                 <GraduationCap className="w-5 h-5" />
               </div>
               <div>
                 <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
                   Student Pack
-                  <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border border-sky-200/80 dark:border-sky-800/60">
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200/80 dark:border-emerald-800/60">
                     Guide
                   </span>
                 </span>
@@ -103,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onClick={() => handleNavClick(link.view)}
                     className={`relative px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
                       isActive
-                        ? 'bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 border border-sky-200/70 dark:border-sky-800/50'
+                        ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-200/70 dark:border-emerald-800/50'
                         : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/70 dark:hover:bg-slate-800/50 border border-transparent'
                     }`}
                   >
@@ -135,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="lg:hidden p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                 aria-label="Toggle navigation menu"
               >
-                {isMobileMenuOpen ? <X className="w-5 h-5 text-sky-500" /> : <Menu className="w-5 h-5" />}
+                {isMobileMenuOpen ? <X className="w-5 h-5 text-emerald-500" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
@@ -164,12 +164,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onClick={() => handleNavClick(link.view)}
                     className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium transition-colors min-h-[44px] ${
                       isActive
-                        ? 'bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 font-semibold border border-sky-200/80 dark:border-sky-800/60'
+                        ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 font-semibold border border-emerald-200/80 dark:border-emerald-800/60'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-transparent'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className={isActive ? 'text-sky-500' : 'text-slate-400'}>{link.icon}</span>
+                      <span className={isActive ? 'text-emerald-500' : 'text-slate-400'}>{link.icon}</span>
                       <span>{link.label}</span>
                     </div>
                   </button>

@@ -62,7 +62,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search by company, tool name, or what you want to build..."
-            className="w-full pl-10 pr-20 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:border-sky-400 shadow-xs"
+            className="w-full pl-10 pr-20 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400 shadow-xs"
           />
           <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
             {searchQuery ? (
@@ -90,7 +90,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
               id="offer-sort-select"
               value={selectedSort}
               onChange={(e) => onSortChange(e.target.value as SortOption)}
-              className="w-full sm:w-auto pl-8 pr-8 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-semibold text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-400/50 focus:border-sky-400 appearance-none shadow-xs cursor-pointer"
+              className="w-full sm:w-auto pl-8 pr-8 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-semibold text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400 appearance-none shadow-xs cursor-pointer"
             >
               <optgroup label="Standard Order">
                 <option value="worth-first">Worth claiming first (Community recommended)</option>

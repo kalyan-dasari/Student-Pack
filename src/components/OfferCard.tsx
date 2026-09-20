@@ -14,7 +14,7 @@ export const OfferCard: React.FC<OfferCardProps> = ({
   return (
     <article
       id={`offer-card-${offer.id}`}
-      className="group flex flex-col justify-between rounded-2xl border border-slate-200/90 dark:border-slate-800/80 bg-white dark:bg-slate-900/80 p-5 shadow-xs hover:border-sky-300 dark:hover:border-sky-700/60 hover:shadow-md transition-all duration-200 relative overflow-hidden"
+      className="group flex flex-col justify-between rounded-2xl border border-slate-200/90 dark:border-slate-800/80 bg-white dark:bg-slate-900/80 p-5 shadow-xs hover:border-emerald-300 dark:hover:border-emerald-700/60 hover:shadow-md transition-all duration-200 relative overflow-hidden"
     >
       {/* Top badges bar */}
       <div>
@@ -38,13 +38,13 @@ export const OfferCard: React.FC<OfferCardProps> = ({
 
         {/* Header: Identity */}
         <div className="flex items-start gap-3.5 mb-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-500 text-white flex items-center justify-center font-bold text-base shadow-xs shrink-0 select-none">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center font-bold text-base shadow-xs shrink-0 select-none">
             {offer.name.substring(0, 2).toUpperCase()}
           </div>
           <div className="min-w-0 flex-1">
             <h3
               onClick={() => onSelectOffer(offer.id)}
-              className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 dark:group-hover:text-sky-400 cursor-pointer transition-colors truncate"
+              className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 cursor-pointer transition-colors truncate"
             >
               {offer.name}
             </h3>
@@ -67,7 +67,7 @@ export const OfferCard: React.FC<OfferCardProps> = ({
         {/* Recommendation Pill */}
         {offer.recommendedAudience && (
           <div className="text-xs text-slate-600 dark:text-slate-300 font-medium mb-3 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
             <span>{offer.recommendedAudience}</span>
           </div>
         )}
