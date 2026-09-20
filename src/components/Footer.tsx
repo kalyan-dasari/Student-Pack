@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Brand & Mission */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2 text-slate-900 dark:text-slate-100 font-extrabold text-base">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-sky-500 to-cyan-400 text-white flex items-center justify-center shadow-xs">
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-emerald-500 to-teal-400 text-white flex items-center justify-center shadow-xs">
                 <GraduationCap className="w-4 h-4" />
               </div>
               <span>Student Pack</span>

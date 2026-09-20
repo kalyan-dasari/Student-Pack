@@ -103,7 +103,7 @@ export default function App() {
     : null;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#0d1117] text-slate-900 dark:text-slate-100 transition-colors font-sans antialiased selection:bg-sky-500 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#0d1117] text-slate-900 dark:text-slate-100 transition-colors font-sans antialiased selection:bg-emerald-500 selection:text-white">
       {/* Top Main Navigation */}
       <Navbar
         currentView={currentView}

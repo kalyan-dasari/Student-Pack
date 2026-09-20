@@ -58,7 +58,7 @@ export const OfferDetail: React.FC<OfferDetailProps> = ({
       <section className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs relative overflow-hidden">
         <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
           <div className="flex items-start gap-4">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500 text-white flex items-center justify-center font-bold text-2xl shadow-sm shrink-0 select-none">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center font-bold text-2xl shadow-sm shrink-0 select-none">
               {offer.name.substring(0, 2).toUpperCase()}
             </div>
             <div className="space-y-1.5">
@@ -211,7 +211,7 @@ export const OfferDetail: React.FC<OfferDetailProps> = ({
         <ol className="space-y-3 pt-2">
           {offer.howToClaim.map((step, idx) => (
             <li key={idx} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
-              <div className="w-6 h-6 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+              <div className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
                 {idx + 1}
               </div>
               <p className="leading-relaxed flex-1 pt-0.5">{step}</p>
